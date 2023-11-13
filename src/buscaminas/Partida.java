@@ -105,20 +105,20 @@ public class Partida {
 
         return puntos;
     }
-    
+
     public Jugador crearJugador(Scanner scanner) {
         System.out.print("Ingresa tu nombre de jugador: ");
         String nombreJugador = scanner.nextLine();
 
-        Image fotoJugador = cargarImagen(); // Debes implementar este método según tus necesidades
-
+        Image fotoJugador = cargarImagen(scanner);
         return new Jugador(nombreJugador, fotoJugador);
     }
 
-    public Image cargarImagen() {
+    public Image cargarImagen(Scanner scanner) {
+        System.out.print("Ingresa la url de tu foto de perfil: ");
+        String urlFoto = scanner.nextLine();
         try {
-            // Reemplaza "ruta_de_la_imagen" con la ruta de tu imagen
-            File archivoImagen = new File("C:\\Users\\danus\\OneDrive\\Documentos\\NetBeansProjects\\Buscaminas\\foto.png");
+            File archivoImagen = new File(urlFoto);
             return ImageIO.read(archivoImagen);
         } catch (IOException e) {
             e.printStackTrace();
