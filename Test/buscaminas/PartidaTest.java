@@ -1,0 +1,6 @@
+package buscaminas;
+class PartidaTest {
+
+}
+
+

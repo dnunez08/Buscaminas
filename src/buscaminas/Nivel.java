@@ -13,5 +13,21 @@ public enum Nivel {
     PRINCIPIANTE,
     INTERMEDIO,
     EXPERTO,
-    PERSONALIZADO
+    PERSONALIZADO;
+
+    public static Nivel obtenerNivel(int nivelElegido) {
+        switch (nivelElegido) {
+            case 1:
+                return PRINCIPIANTE;
+            case 2:
+                return INTERMEDIO;
+            case 3:
+                return EXPERTO;
+            case 4:
+                return PERSONALIZADO;
+            default:
+                System.out.println("Nivel no válido. Seleccionando PRINCIPIANTE por defecto.");
+                return PRINCIPIANTE;
+        }
+    }
 }

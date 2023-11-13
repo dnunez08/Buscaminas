@@ -1,0 +1,3 @@
+package buscaminas;
+class JugadorTest {
+}
