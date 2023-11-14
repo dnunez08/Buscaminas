@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author danus
+ * @author danusgferhert htrn hrthrehterhterwhdefewf
  */
 public class Buscaminas {
 
