@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="3Actualizacion">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaConMinaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaConMinaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaConVidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaConVidaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaVaciaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaVaciaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/NivelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/NivelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/PartidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/PartidaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/ResultadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/ResultadoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/buscaminas/TableroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/TableroTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Casilla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Partida.java" afterDir="false" />
+    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="4Actualizacion">
+      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Jugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConMinaTest$CasillaConVida.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConMinaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConMinaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConVidaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConVidaTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +171,7 @@
       <updated>1699882884619</updated>
       <workItem from="1699882886928" duration="3886000" />
       <workItem from="1699958800143" duration="1535000" />
-      <workItem from="1699984527542" duration="5165000" />
+      <workItem from="1699984527542" duration="5701000" />
     </task>
     <task id="LOCAL-00001" summary="1Actualizacion">
       <option name="closed" value="true" />
@@ -204,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699886179638</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4Actualizacion">
+      <option name="closed" value="true" />
+      <created>1699990445770</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699990445770</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +215,7 @@
     <MESSAGE value="1Actualizacion" />
     <MESSAGE value="2Actualizacion" />
     <MESSAGE value="3Actualizacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="3Actualizacion" />
+    <MESSAGE value="4Actualizacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="4Actualizacion" />
   </component>
 </project>
