@@ -6,13 +6,11 @@ import org.junit.jupiter.api.Test;
 class ResultadoTest {
 
     @Test
-    void TenerValoresCorrectos() {
-        // Arrange
+    void tenerValoresCorrectos() {
         Resultado ganada = Resultado.GANADA;
         Resultado perdida = Resultado.PERDIDA;
         Resultado abandono = Resultado.ABANDONO;
 
-        // Assert
         assertEquals("GANADA", ganada.name(), "El nombre del resultado ganada debería ser 'GANADA'");
         assertEquals("PERDIDA", perdida.name(), "El nombre del resultado perdida debería ser 'PERDIDA'");
         assertEquals("ABANDONO", abandono.name(), "El nombre del resultado abandono debería ser 'ABANDONO'");

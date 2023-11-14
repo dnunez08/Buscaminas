@@ -6,14 +6,11 @@ import org.junit.jupiter.api.Test;
 public class TableroTest {
 
     @Test
-    void InicializarTableroCorrectamente() {
-        // Arrange
+    void inicializarTableroCorrectamente() {
         Tablero tablero = new Tablero(8, 8, 10);
 
-        // Act
         Casilla[][] casillas = tablero.inicializarTablero();
 
-        // Assert
         assertNotNull(casillas, "El tablero no debería ser nulo");
         assertEquals(8, casillas.length, "El número de filas debería ser 8");
         assertEquals(8, casillas[0].length, "El número de columnas debería ser 8");
@@ -36,12 +33,10 @@ public class TableroTest {
     }
 
     @Test
-    void MostrarTableroCorrectamente() {
-        // Arrange
+    void mostrarTableroCorrectamente() {
         Tablero tablero = new Tablero(3, 3, 1);
         Casilla[][] casillas = tablero.inicializarTablero();
 
-        // Act y Assert
         assertDoesNotThrow(() -> tablero.mostrarTablero(casillas), "No debería lanzar excepciones");
     }
 }

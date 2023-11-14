@@ -76,10 +76,13 @@ public class Partida {
     public boolean esPartidaFinalizada() {
         return resultado != null;
     }
+
+    public Tablero getTablero() { return tablero; }
+
+    public Nivel getNivelSeleccionado() { return nivelSeleccionado; }
     
     public int calcularPuntosGanados(Nivel nivel, int numBombas) {
         int puntos = 0;
-
         switch (nivel) {
             case PRINCIPIANTE:
                 puntos = 3;
@@ -115,17 +118,26 @@ public class Partida {
     }
 
     public Image cargarImagen(Scanner scanner) {
-        System.out.print("Ingresa la url de tu foto de perfil: ");
-        String urlFoto = scanner.nextLine();
-        try {
-            File archivoImagen = new File(urlFoto);
-            return ImageIO.read(archivoImagen);
-        } catch (IOException e) {
-            e.printStackTrace();
+        System.out.print("¿Quieres ingresar una foto de perfil? (Si/No): ");
+        String respuesta = scanner.nextLine();
+
+        if (respuesta.equalsIgnoreCase("Si")) {
+            System.out.print("Ingresa la URL de tu foto de perfil: ");
+            String urlFoto = scanner.nextLine();
+
+            try {
+                File archivoImagen = new File(urlFoto);
+                return ImageIO.read(archivoImagen);
+            } catch (IOException e) {
+                System.out.println("Error al leer la imagen: " + e.getMessage());
+                return null;
+            }
+        } else {
             return null;
         }
     }
-    
+
+
     public void jugarPartida() {
         Scanner scanner = new Scanner(System.in);
         Partida partida;
@@ -201,11 +213,11 @@ public class Partida {
     }
 
     public void mostrarNivelesDisponibles() {
-        System.out.println("Niveles disponibles:");
-        System.out.println("1. Principiante (8x8, 10 minas)");
-        System.out.println("2. Intermedio (16x16, 40 minas)");
-        System.out.println("3. Experto (16x30, 99 minas)");
-        System.out.println("4. Personalizado");
+        System.out.println("Niveles disponibles:\n" +
+                "1. Principiante (8x8, 10 minas)\n" +
+                "2. Intermedio (16x16, 40 minas)\n" +
+                "3. Experto (16x30, 99 minas)\n" +
+                "4. Personalizado");
     }
 
     public boolean inicializarPartida(int nivelElegido) {

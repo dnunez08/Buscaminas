@@ -35,6 +35,10 @@ public class Jugador {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public Image getFoto() { return foto; }
+
+    public void setFoto(Image foto) { this.foto = foto; }
     
     public int getPuntosTotales() {
         return puntosTotales;

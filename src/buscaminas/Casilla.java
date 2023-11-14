@@ -13,6 +13,7 @@ public class Casilla {
     private int x;
     private int y;
     private boolean oculta;
+    private Tablero tablero;
 
     public Casilla(int x, int y) {
         this.x = x;
@@ -35,5 +36,6 @@ public class Casilla {
     public void descubrir() {
         oculta = false;
     }
+
 }
 

@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="2Actualizacion">
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaConMinaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaConVidaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaVaciaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/JugadorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/NivelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/PartidaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/ResultadoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/buscaminas/TableroTest.java" afterDir="false" />
+    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="3Actualizacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buscaminas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Buscaminas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Nivel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Nivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Nivel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaConMinaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaConMinaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaConVidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaConVidaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/CasillaVaciaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/CasillaVaciaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/JugadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/NivelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/NivelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/PartidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/PartidaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/ResultadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/ResultadoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/TableroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/TableroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buscaminas/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Casilla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buscaminas/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buscaminas/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Partida.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +36,10 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2Y7iBdFgDMz8RNBFwLfnRzVTB7N" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,29 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -80,8 +79,8 @@
       <recent name="buscaminas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TableroTest">
-    <configuration name="CasillaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PartidaTest.crearJugadorCorrectamente">
+    <configuration name="JugadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Buscaminas" />
       <extension name="coverage">
         <pattern>
@@ -90,13 +89,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.CasillaTest" />
+      <option name="MAIN_CLASS_NAME" value="buscaminas.JugadorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CasillaVaciaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JugadorTest.deberiaCrearJugadorCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Buscaminas" />
       <extension name="coverage">
         <pattern>
@@ -105,13 +104,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.CasillaVaciaTest" />
+      <option name="MAIN_CLASS_NAME" value="buscaminas.JugadorTest" />
+      <option name="METHOD_NAME" value="deberiaCrearJugadorCorrectamente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartidaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Buscaminas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buscaminas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="buscaminas" />
+      <option name="MAIN_CLASS_NAME" value="buscaminas.PartidaTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NivelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PartidaTest.cargarImagenCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Buscaminas" />
       <extension name="coverage">
         <pattern>
@@ -120,13 +135,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.NivelTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="buscaminas.PartidaTest" />
+      <option name="METHOD_NAME" value="cargarImagenCorrectamente" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResultadoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PartidaTest.crearJugadorCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Buscaminas" />
       <extension name="coverage">
         <pattern>
@@ -135,34 +151,20 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.ResultadoTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TableroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Buscaminas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="buscaminas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.TableroTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="buscaminas.PartidaTest" />
+      <option name="METHOD_NAME" value="crearJugadorCorrectamente" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TableroTest" />
-        <item itemvalue="JUnit.ResultadoTest" />
-        <item itemvalue="JUnit.NivelTest" />
-        <item itemvalue="JUnit.CasillaVaciaTest" />
-        <item itemvalue="JUnit.CasillaTest" />
+        <item itemvalue="JUnit.PartidaTest.crearJugadorCorrectamente" />
+        <item itemvalue="JUnit.PartidaTest.cargarImagenCorrectamente" />
+        <item itemvalue="JUnit.JugadorTest" />
+        <item itemvalue="JUnit.JugadorTest.deberiaCrearJugadorCorrectamente" />
+        <item itemvalue="JUnit.PartidaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +176,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699882884619</updated>
-      <workItem from="1699882886928" duration="2992000" />
+      <workItem from="1699882886928" duration="3886000" />
+      <workItem from="1699958800143" duration="1535000" />
+      <workItem from="1699984527542" duration="5165000" />
     </task>
     <task id="LOCAL-00001" summary="1Actualizacion">
       <option name="closed" value="true" />
@@ -192,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699883186092</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="3Actualizacion">
+      <option name="closed" value="true" />
+      <created>1699886179638</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699886179638</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +213,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1Actualizacion" />
     <MESSAGE value="2Actualizacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="2Actualizacion" />
+    <MESSAGE value="3Actualizacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="3Actualizacion" />
   </component>
 </project>
