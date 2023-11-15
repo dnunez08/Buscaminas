@@ -24,6 +24,8 @@ public class Partida {
     private Tablero tablero;
     private Casilla[][] casillas;
     private Nivel nivelSeleccionado;
+    private int numVidasAcumuladas;
+
 
 
     public Partida() {
@@ -142,7 +144,7 @@ public class Partida {
         Scanner scanner = new Scanner(System.in);
         Partida partida;
 
-        while (true) {
+        do {
             mostrarNivelesDisponibles();
             System.out.print("Elige un nivel (1/2/3/4): ");
             int nivelElegido = scanner.nextInt();
@@ -150,11 +152,18 @@ public class Partida {
             if (!inicializarPartida(nivelElegido)) {
                 System.out.println("Nivel no válido. Por favor, elige un nivel válido.");
                 continue;
-            }else {
+            } else {
                 partida = new Partida();
-                while (!partida.esPartidaFinalizada()) {
-                    // Mostrar el tablero y permitir que el jugador seleccione una casilla para descubrir
+                partida.numVidasAcumuladas = 1;
+
+                while (!partida.esPartidaFinalizada() && partida.numVidasAcumuladas > 0) {
                     tablero.mostrarTablero(casillas);
+
+                    // Mostrar el número de vidas solo si hay vidas disponibles
+                    if (partida.numVidasAcumuladas > 0) {
+                        System.out.println("Número de vidas: " + partida.numVidasAcumuladas);
+                    }
+
                     System.out.print("Ingresa la fila para descubrir (1-" + tablero.getDimX() + "): ");
                     int fila = scanner.nextInt();
                     System.out.print("Ingresa la columna para descubrir (1-" + tablero.getDimY() + "): ");
@@ -170,10 +179,18 @@ public class Partida {
 
                             // Verificar si la casilla contiene una mina
                             if (casillaElegida instanceof CasillaConMina) {
-                                tablero.mostrarTablero(casillas);
-                                System.out.println("¡Has encontrado una mina! Juego perdido.");
-                                partida.setResultado(Resultado.PERDIDA);
-                                break;
+                                // Restar una vida si hay vidas acumuladas
+                                if (partida.numVidasAcumuladas > 0) {
+                                    partida.numVidasAcumuladas--;
+                                    tablero.mostrarTablero(casillas);
+                                    System.out.println("¡Has encontrado una mina! Te quedan " + partida.numVidasAcumuladas + " vidas.");
+                                } else {
+                                    break;
+                                }
+                            } else if (casillaElegida instanceof CasillaConVida) {
+                                // Incrementar el número de vidas acumuladas
+                                partida.numVidasAcumuladas++;
+                                System.out.println("¡Has encontrado una vida extra! Ahora tienes " + partida.numVidasAcumuladas + " vidas.");
                             } else {
                                 // Actualizar las estadísticas de la partida
                                 partida.incrementarCasillasDescubiertas();
@@ -190,7 +207,12 @@ public class Partida {
                         // Calcular puntos ganados
                         int puntosGanados = partida.calcularPuntosGanados(nivelSeleccionado, tablero.getNumMinas());
                         System.out.println("Puntos obtenidos: " + puntosGanados);
+                        break;
                     }
+                }
+
+                if (partida.numVidasAcumuladas <= 0) {
+                    partida.setResultado(Resultado.PERDIDA);
                 }
 
                 System.out.println("Puntos obtenidos: 0");
@@ -198,7 +220,6 @@ public class Partida {
                 // Mostrar el resultado de la partida
                 Resultado resultado = partida.getResultado();
                 System.out.println("Resultado de la partida: " + resultado);
-
             }
 
             // Preguntar si el jugador quiere jugar de nuevo
@@ -207,10 +228,12 @@ public class Partida {
             if (!respuesta.equalsIgnoreCase("1")) {
                 break;
             }
-        }
+        } while (true);
 
         scanner.close();
     }
+
+
 
     public void mostrarNivelesDisponibles() {
         System.out.println("Niveles disponibles:\n" +
@@ -223,13 +246,13 @@ public class Partida {
     public boolean inicializarPartida(int nivelElegido) {
         Scanner scanner = new Scanner(System.in);
         if (nivelElegido == 1) {
-            tablero = new Tablero(8, 8, 10);
+            tablero = new Tablero(8, 8, 10, 3);
             nivelSeleccionado = Nivel.PRINCIPIANTE;
         } else if (nivelElegido == 2) {
-            tablero = new Tablero(16, 16, 40);
+            tablero = new Tablero(16, 16, 40, 6);
             nivelSeleccionado = Nivel.INTERMEDIO;
         } else if (nivelElegido == 3) {
-            tablero = new Tablero(16, 30, 99);
+            tablero = new Tablero(16, 30, 99, 10);
             nivelSeleccionado = Nivel.EXPERTO;
         } else if (nivelElegido == 4) {
             System.out.print("Ingresa el número de filas del tablero personalizado: ");
@@ -238,12 +261,13 @@ public class Partida {
             int columnas = scanner.nextInt();
             System.out.print("Ingresa el número de minas: ");
             int minas = scanner.nextInt();
-            tablero = new Tablero(filas, columnas, minas);
+            System.out.print("Ingresa el número de vidas: ");
+            int vidas = scanner.nextInt();
+            tablero = new Tablero(filas, columnas, minas, vidas);
             nivelSeleccionado = Nivel.PERSONALIZADO;
         } else {
             return false;
         }
-
         casillas = tablero.inicializarTablero();
         return true;
     }

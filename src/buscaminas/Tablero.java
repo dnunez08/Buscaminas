@@ -16,12 +16,15 @@ public class Tablero {
     private int dimX;
     private int dimY;
     private int numMinas;
+    private int numVidas;
 
-    public Tablero(int dimX, int dimY, int numMinas) {
+    public Tablero(int dimX, int dimY, int numMinas, int numVidas) {
         this.dimX = dimX;
         this.dimY = dimY;
         this.numMinas = numMinas;
+        this.numVidas = numVidas;
     }
+
 
     public int getDimX() {
         return dimX;
@@ -34,7 +37,11 @@ public class Tablero {
     public int getNumMinas() {
         return numMinas;
     }
-    
+    public int getNumVidas() {
+        return numVidas;
+    }
+
+
     public Casilla[][] inicializarTablero() {
         Casilla[][] casillas = new Casilla[dimX][dimY];
         Random random = new Random();
@@ -56,12 +63,35 @@ public class Tablero {
                 minasColocadas++;
             }
         }
+
+        // Colocar casillas con vida aleatoriamente en el tablero
+        int vidasColocadas = 0;
+        while (vidasColocadas < numVidas) {
+            int fila = random.nextInt(dimX);
+            int columna = random.nextInt(dimY);
+
+            // Verificar si la casilla está vacía
+            if (casillas[fila][columna] instanceof CasillaVacia) {
+                casillas[fila][columna] = new CasillaConVida(fila, columna);
+                vidasColocadas++;
+            }
+        }
+
         // Calcular el número de minas alrededor de las casillas vacías
         for (int i = 0; i < dimX; i++) {
             for (int j = 0; j < dimY; j++) {
                 if (casillas[i][j] instanceof CasillaVacia) {
                     int minasAlrededor = calcularMinasAlrededor(casillas, i, j);
                     ((CasillaVacia) casillas[i][j]).setNumMinasAlrededor(minasAlrededor);
+                }
+            }
+        }
+        // Calcular el número de minas alrededor de las casillas con vida
+        for (int i = 0; i < dimX; i++) {
+            for (int j = 0; j < dimY; j++) {
+                if (casillas[i][j] instanceof CasillaConVida) {
+                    int minasAlrededor = calcularMinasAlrededor(casillas, i, j);
+                    ((CasillaConVida) casillas[i][j]).setNumMinasAlrededor(minasAlrededor);
                 }
             }
         }
@@ -86,12 +116,15 @@ public class Tablero {
         return minasAlrededor;
     }
 
-    
+    public void mostrarVidas() {
+        System.out.println("Número de vidas: " + numVidas);
+    }
+
     public void mostrarTablero(Casilla[][] casillas) {
         // Imprimir encabezado de columnas
-        System.out.print("  "); // Espacio para el número de fila
+        System.out.print(""); // Espacio para el número de fila
         for (int columna = 1; columna <= casillas[0].length; columna++) {
-            System.out.printf("%2d  ", columna); // Número de columna
+            System.out.printf("%6d ", columna); // Número de columna
         }
         System.out.println(); // Cambiar de línea
 
@@ -101,22 +134,53 @@ public class Tablero {
 
             for (int columna = 0; columna < casillas[fila].length; columna++) {
                 if (casillas[fila][columna].isOculta()) {
-                    System.out.print("[ ] ");
+                    System.out.print(" [   ] ");
                 } else {
                     if (casillas[fila][columna] instanceof CasillaConMina) {
-                        System.out.print("[*] "); // Mina
+                        System.out.print(" [ * ] "); // Mina
                     } else if (casillas[fila][columna] instanceof CasillaConVida) {
-                        System.out.print("[V] "); // Vida extra
+                        int minasAlrededor = ((CasillaConVida) casillas[fila][columna]).getNumMinasAlrededor();
+                        System.out.print(" ["+ minasAlrededor +"/V] "); // Vida extra
                     } else if (casillas[fila][columna] instanceof CasillaVacia) {
                         int minasAlrededor = ((CasillaVacia) casillas[fila][columna]).getNumMinasAlrededor();
-                        System.out.printf("[" + minasAlrededor + "] "); // Número de minas alrededor
+                        System.out.printf(" [ " + minasAlrededor + " ] "); // Número de minas alrededor
                     }
                 }
             }
             System.out.println(); // Cambiar de línea
         }
+
     }
-    
+
+    public void mostrarTableroo(Casilla[][] casillas) {
+        // Imprimir encabezado de columnas
+        System.out.print(""); // Espacio para el número de fila
+        for (int columna = 1; columna <= casillas[0].length; columna++) {
+            System.out.printf("%5d ", columna); // Número de columna
+        }
+        System.out.println(); // Cambiar de línea
+
+        // Imprimir encabezado de filas y contenido de las casillas
+        for (int fila = 0; fila < casillas.length; fila++) {
+            System.out.printf("%2d", fila + 1);
+
+            for (int columna = 0; columna < casillas[fila].length; columna++) {
+                if (casillas[fila][columna] instanceof CasillaConMina) {
+                    System.out.print("[ * ] "); // Mina
+                } else if (casillas[fila][columna] instanceof CasillaConVida) {
+                    int minasAlrededor = ((CasillaConVida) casillas[fila][columna]).getNumMinasAlrededor();
+                    System.out.printf("[%d/V] ", minasAlrededor); // Vida extra
+                } else if (casillas[fila][columna] instanceof CasillaVacia) {
+                    int minasAlrededor = ((CasillaVacia) casillas[fila][columna]).getNumMinasAlrededor();
+                    System.out.printf("[ %d ] ", minasAlrededor); // Número de minas alrededor
+                }
+            }
+            System.out.println(); // Cambiar de línea
+        }
+    }
+
+
+
 }
 
 

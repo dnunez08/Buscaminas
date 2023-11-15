@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="4Actualizacion">
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConMinaTest$CasillaConVida.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConMinaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConMinaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConVidaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Buscaminas/buscaminas/CasillaConVidaTest.class" afterDir="false" />
+    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="5Actualizacion">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/PartidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/PartidaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/buscaminas/TableroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/buscaminas/TableroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Casilla.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Casilla.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buscaminas/CasillaConVida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/CasillaConVida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buscaminas/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buscaminas/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +29,9 @@
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -72,8 +76,9 @@
       <recent name="buscaminas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PartidaTest.crearJugadorCorrectamente">
-    <configuration name="JugadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PartidaTest">
+    <configuration name="Buscaminas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="buscaminas.Buscaminas" />
       <module name="Buscaminas" />
       <extension name="coverage">
         <pattern>
@@ -81,25 +86,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.JugadorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JugadorTest.deberiaCrearJugadorCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Buscaminas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="buscaminas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.JugadorTest" />
-      <option name="METHOD_NAME" value="deberiaCrearJugadorCorrectamente" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,22 +101,6 @@
       <option name="PACKAGE_NAME" value="buscaminas" />
       <option name="MAIN_CLASS_NAME" value="buscaminas.PartidaTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PartidaTest.cargarImagenCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Buscaminas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="buscaminas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="buscaminas" />
-      <option name="MAIN_CLASS_NAME" value="buscaminas.PartidaTest" />
-      <option name="METHOD_NAME" value="cargarImagenCorrectamente" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,13 +121,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TableroTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Buscaminas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buscaminas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="buscaminas" />
+      <option name="MAIN_CLASS_NAME" value="buscaminas.TableroTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableroTest.deberiaInicializarTableroCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Buscaminas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buscaminas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="buscaminas" />
+      <option name="MAIN_CLASS_NAME" value="buscaminas.TableroTest" />
+      <option name="METHOD_NAME" value="deberiaInicializarTableroCorrectamente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PartidaTest.crearJugadorCorrectamente" />
-        <item itemvalue="JUnit.PartidaTest.cargarImagenCorrectamente" />
-        <item itemvalue="JUnit.JugadorTest" />
-        <item itemvalue="JUnit.JugadorTest.deberiaCrearJugadorCorrectamente" />
         <item itemvalue="JUnit.PartidaTest" />
+        <item itemvalue="JUnit.TableroTest" />
+        <item itemvalue="JUnit.TableroTest.deberiaInicializarTableroCorrectamente" />
+        <item itemvalue="Application.Buscaminas" />
+        <item itemvalue="JUnit.PartidaTest.crearJugadorCorrectamente" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +172,9 @@
       <updated>1699882884619</updated>
       <workItem from="1699882886928" duration="3886000" />
       <workItem from="1699958800143" duration="1535000" />
-      <workItem from="1699984527542" duration="5701000" />
+      <workItem from="1699984527542" duration="5819000" />
+      <workItem from="1699992952896" duration="5785000" />
+      <workItem from="1700050244916" duration="10018000" />
     </task>
     <task id="LOCAL-00001" summary="1Actualizacion">
       <option name="closed" value="true" />
@@ -205,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699990445770</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="5Actualizacion">
+      <option name="closed" value="true" />
+      <created>1699990522847</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699990522847</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +227,7 @@
     <MESSAGE value="2Actualizacion" />
     <MESSAGE value="3Actualizacion" />
     <MESSAGE value="4Actualizacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="4Actualizacion" />
+    <MESSAGE value="5Actualizacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="5Actualizacion" />
   </component>
 </project>
