@@ -11,10 +11,6 @@ import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 
-/**
- *
- * @author danus
- */
 public class Partida {
     private boolean vidaGastada;
     private int numCasillasDescubiertas;

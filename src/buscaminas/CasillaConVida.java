@@ -5,10 +5,6 @@
  */
 package buscaminas;
 
-/**
- *
- * @author danus
- */
 public class CasillaConVida extends Casilla {
     private int numMinasAlrededor;
     public CasillaConVida(int x, int y) {

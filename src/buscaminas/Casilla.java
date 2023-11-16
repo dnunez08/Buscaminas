@@ -5,10 +5,6 @@
  */
 package buscaminas;
 
-/**
- *
- * @author danus
- */
 public class Casilla {
     private int x;
     private int y;

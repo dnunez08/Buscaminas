@@ -7,10 +7,6 @@ package buscaminas;
 
 import java.util.Scanner;
 
-/**
- *
- * @author danusgferhert htrn hrthrehterhterwhdefewf
- */
 public class Buscaminas {
 
     /**

@@ -7,10 +7,6 @@ package buscaminas;
 
 import java.awt.Image;
 
-/**
- *
- * @author danus
- */
 public class Jugador {
     private String nombre;
     private Image foto;

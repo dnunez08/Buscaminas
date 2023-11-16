@@ -5,10 +5,6 @@
  */
 package buscaminas;
 
-/**
- *
- * @author danus
- */
 public class CasillaConMina extends Casilla {
     public CasillaConMina(int x, int y) {
         super(x, y);

@@ -6,12 +6,6 @@
 package buscaminas;
 import java.util.Random;
 
-/**
- *
- * @author danus
- */
-
-
 public class Tablero {
     private int dimX;
     private int dimY;
@@ -150,7 +144,6 @@ public class Tablero {
             System.out.println(); // Cambiar de línea
         }
     }
-
 }
 
 

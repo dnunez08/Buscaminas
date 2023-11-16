@@ -5,10 +5,6 @@
  */
 package buscaminas;
 
-/**
- *
- * @author danus
- */
 public enum Resultado{
     GANADA,
     PERDIDA,
