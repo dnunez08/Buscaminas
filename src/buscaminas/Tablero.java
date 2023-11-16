@@ -149,37 +149,7 @@ public class Tablero {
             }
             System.out.println(); // Cambiar de línea
         }
-
     }
-
-    public void mostrarTableroo(Casilla[][] casillas) {
-        // Imprimir encabezado de columnas
-        System.out.print(""); // Espacio para el número de fila
-        for (int columna = 1; columna <= casillas[0].length; columna++) {
-            System.out.printf("%5d ", columna); // Número de columna
-        }
-        System.out.println(); // Cambiar de línea
-
-        // Imprimir encabezado de filas y contenido de las casillas
-        for (int fila = 0; fila < casillas.length; fila++) {
-            System.out.printf("%2d", fila + 1);
-
-            for (int columna = 0; columna < casillas[fila].length; columna++) {
-                if (casillas[fila][columna] instanceof CasillaConMina) {
-                    System.out.print("[ * ] "); // Mina
-                } else if (casillas[fila][columna] instanceof CasillaConVida) {
-                    int minasAlrededor = ((CasillaConVida) casillas[fila][columna]).getNumMinasAlrededor();
-                    System.out.printf("[%d/V] ", minasAlrededor); // Vida extra
-                } else if (casillas[fila][columna] instanceof CasillaVacia) {
-                    int minasAlrededor = ((CasillaVacia) casillas[fila][columna]).getNumMinasAlrededor();
-                    System.out.printf("[ %d ] ", minasAlrededor); // Número de minas alrededor
-                }
-            }
-            System.out.println(); // Cambiar de línea
-        }
-    }
-
-
 
 }
 
