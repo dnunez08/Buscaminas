@@ -8,10 +8,6 @@ package buscaminas;
 import java.util.Scanner;
 
 public class Buscaminas {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scanner = new Scanner(System.in);
