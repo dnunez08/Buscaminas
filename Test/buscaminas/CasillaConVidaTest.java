@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class CasillaConVidaTest {
 
     @Test
-    void esCasillaConVida() {
+    void testEsCasillaConVida() {
         CasillaConVida casillaConVida = new CasillaConVida(1, 1);
 
         boolean resultado = casillaConVida.esCasillaConVida();
@@ -15,7 +15,7 @@ class CasillaConVidaTest {
     }
 
     @Test
-    void coordenadasCorrectas() {
+    void testCoordenadasCorrectas() {
         int x = 1;
         int y = 2;
         CasillaConVida casillaConVida = new CasillaConVida(x, y);

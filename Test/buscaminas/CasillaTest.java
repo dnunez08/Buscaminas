@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class CasillaTest {
 
     @Test
-    void coordenadasCorrectas() {
+    void testCoordenadasCorrectas() {
         int x = 1;
         int y = 2;
         Casilla casilla = new Casilla(x, y);
@@ -19,7 +19,7 @@ class CasillaTest {
     }
 
     @Test
-    void estarOcultaInicialmente() {
+    void testEstarOcultaInicialmente() {
         Casilla casilla = new Casilla(1, 1);
 
         boolean oculta = casilla.isOculta();
@@ -28,7 +28,7 @@ class CasillaTest {
     }
 
     @Test
-    void descubrirCambiaEstado() {
+    void testDescubrirCambiaEstado() {
         Casilla casilla = new Casilla(1, 1);
 
         casilla.descubrir();

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class TableroTest {
 
     @Test
-    void inicializarTableroCorrectamente() {
+    void testInicializarTableroCorrectamente() {
         Tablero tablero = new Tablero(8, 8, 10, 2);
 
         Casilla[][] casillas = tablero.inicializarTablero();
@@ -42,7 +42,7 @@ public class TableroTest {
 
 
     @Test
-    void mostrarTableroCorrectamente() {
+    void testMostrarTableroCorrectamente() {
         Tablero tablero = new Tablero(3, 3, 1, 1);
         Casilla[][] casillas = tablero.inicializarTablero();
 
@@ -50,7 +50,7 @@ public class TableroTest {
     }
 
     @Test
-    void mostrarVidasCorrectamente() {
+    void testMostrarVidasCorrectamente() {
         Tablero tablero = new Tablero(3, 3, 1, 3);
 
         assertDoesNotThrow(() -> tablero.mostrarVidas(), "No debería lanzar excepciones");

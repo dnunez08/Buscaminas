@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class ResultadoTest {
 
     @Test
-    void tenerValoresCorrectos() {
+    void testTenerValoresCorrectos() {
         Resultado ganada = Resultado.GANADA;
         Resultado perdida = Resultado.PERDIDA;
         Resultado abandono = Resultado.ABANDONO;

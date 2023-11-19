@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class NivelTest {
 
     @Test
-    void devolverNivelCorrectoParaPrincipiante() {
+    void testDevolverNivelCorrectoParaPrincipiante() {
         int nivelElegido = 1;
 
         Nivel nivel = Nivel.obtenerNivel(nivelElegido);
@@ -15,7 +15,7 @@ class NivelTest {
     }
 
     @Test
-    void devolverNivelCorrectoParaIntermedio() {
+    void testDevolverNivelCorrectoParaIntermedio() {
         int nivelElegido = 2;
 
         Nivel nivel = Nivel.obtenerNivel(nivelElegido);
@@ -24,7 +24,7 @@ class NivelTest {
     }
 
     @Test
-    void devolverNivelCorrectoParaExperto() {
+    void testDevolverNivelCorrectoParaExperto() {
         int nivelElegido = 3;
 
         Nivel nivel = Nivel.obtenerNivel(nivelElegido);
@@ -33,7 +33,7 @@ class NivelTest {
     }
 
     @Test
-    void devolverNivelCorrectoParaPersonalizado() {
+    void testDevolverNivelCorrectoParaPersonalizado() {
         int nivelElegido = 4;
 
         Nivel nivel = Nivel.obtenerNivel(nivelElegido);
@@ -42,7 +42,7 @@ class NivelTest {
     }
 
     @Test
-    void devolverNivelDefaultParaNivelInvalido() {
+    void testDevolverNivelDefaultParaNivelInvalido() {
         int nivelElegido = 5;
 
         Nivel nivel = Nivel.obtenerNivel(nivelElegido);

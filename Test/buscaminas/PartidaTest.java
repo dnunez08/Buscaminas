@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class PartidaTest {
 
     @Test
-    void inicializarPartidaCorrectamente() {
+    void testInicializarPartidaCorrectamente() {
         Partida partida = new Partida();
 
         boolean resultado = partida.inicializarPartida(1);
@@ -28,7 +28,7 @@ public class PartidaTest {
     }
 
     @Test
-    void noInicializarPartidaConNivelInvalido() {
+    void testNoInicializarPartidaConNivelInvalido() {
         Partida partida = new Partida();
 
         boolean resultado = partida.inicializarPartida(5);
@@ -39,7 +39,7 @@ public class PartidaTest {
     }
 
     @Test
-    void mostrarNivelesDisponibles() {
+    void testMostrarNivelesDisponibles() {
         Partida partida = new Partida();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
@@ -57,7 +57,7 @@ public class PartidaTest {
 
 
     @Test
-    void crearJugadorCorrectamente() {
+    void testCrearJugadorCorrectamente() {
         Partida partida = new Partida();
         String input = "Juan\nSi\nfoto.jpg\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
@@ -70,7 +70,7 @@ public class PartidaTest {
     }
 
     @Test
-    void cargarImagenCorrectamente() {
+    void testCargarImagenCorrectamente() {
         Partida partida = new Partida();
         String input = "Si\nfoto.jpg\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));

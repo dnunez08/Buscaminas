@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class CasillaVaciaTest {
 
     @Test
-    void coordenadasCorrectas() {
+    void testCoordenadasCorrectas() {
         int x = 1;
         int y = 2;
         CasillaVacia casillaVacia = new CasillaVacia(x, y, 0);
@@ -19,7 +19,7 @@ class CasillaVaciaTest {
     }
 
     @Test
-    void estarOcultaInicialmente() {
+    void testEstarOcultaInicialmente() {
         CasillaVacia casillaVacia = new CasillaVacia(1, 1, 0);
 
         boolean oculta = casillaVacia.isOculta();
@@ -28,7 +28,7 @@ class CasillaVaciaTest {
     }
 
     @Test
-    void tenerNumMinasAlrededorCorrecto() {
+    void testTenerNumMinasAlrededorCorrecto() {
         int numMinasAlrededor = 3;
         CasillaVacia casillaVacia = new CasillaVacia(1, 1, numMinasAlrededor);
 
@@ -38,7 +38,7 @@ class CasillaVaciaTest {
     }
 
     @Test
-    void cambiarNumMinasAlrededor() {
+    void testCambiarNumMinasAlrededor() {
         CasillaVacia casillaVacia = new CasillaVacia(1, 1, 0);
 
         int nuevoNumMinasAlrededor = 5;
@@ -49,7 +49,7 @@ class CasillaVaciaTest {
     }
 
     @Test
-    void descubrirCambiaEstado() {
+    void testDescubrirCambiaEstado() {
         CasillaVacia casillaVacia = new CasillaVacia(1, 1, 0);
 
         casillaVacia.descubrir();

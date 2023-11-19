@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class CasillaConMinaTest {
     @Test
-    void esCasillaConMina() {
+    void testEsCasillaConMina() {
         CasillaConMina casillaConMina = new CasillaConMina(1, 1);
 
         boolean resultado = casillaConMina.esMina();
@@ -14,7 +14,7 @@ class CasillaConMinaTest {
     }
 
     @Test
-    void coordenadasCorrectas() {
+    void testCoordenadasCorrectas() {
         int x = 1;
         int y = 2;
         CasillaConMina casillaConMina = new CasillaConMina(x, y);

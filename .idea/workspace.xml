@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="7 Actualizacion">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Tablero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Tablero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Tablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Buscaminas.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Buscaminas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Casilla.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Casilla.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/CasillaConMina.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/CasillaConMina.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/CasillaConVida.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/CasillaConVida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/CasillaVacia.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/CasillaVacia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Jugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Nivel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Partida$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Partida$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Partida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Resultado.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Resultado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/buscaminas/Tablero.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/buscaminas/Tablero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

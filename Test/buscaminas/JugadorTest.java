@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class JugadorTest {
 
     @Test
-    void crearJugadorCorrectamente() {
+    void testCrearJugadorCorrectamente() {
         String nombre = "Jugador1";
         Image foto = null;
 
@@ -24,7 +24,7 @@ public class JugadorTest {
     }
 
     @Test
-    void modificarAtributosDeJugadorCorrectamente() {
+    void testModificarAtributosDeJugadorCorrectamente() {
         Jugador jugador = new Jugador("Jugador1", null);
 
         jugador.setPuntosTotales(100);
@@ -37,7 +37,7 @@ public class JugadorTest {
     }
 
     @Test
-    void compararJugadoresCorrectamente() {
+    void testCompararJugadoresCorrectamente() {
         Jugador jugador1 = new Jugador("Jugador1", null);
         Jugador jugador2 = new Jugador("Jugador1", null);
 
