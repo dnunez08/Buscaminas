@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 package buscaminas;
+import java.io.Serializable;
 import java.util.Random;
 
-public class Tablero {
+public class Tablero implements Serializable {
     private int dimX;
     private int dimY;
     private int numMinas;

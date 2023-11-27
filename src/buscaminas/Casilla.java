@@ -5,7 +5,9 @@
  */
 package buscaminas;
 
-public class Casilla {
+import java.io.Serializable;
+
+public class Casilla implements Serializable {
     private int x;
     private int y;
     private boolean oculta;

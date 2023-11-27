@@ -5,7 +5,9 @@
  */
 package buscaminas;
 
-public class CasillaConVida extends Casilla {
+import java.io.Serializable;
+
+public class CasillaConVida extends Casilla implements Serializable {
     private int numMinasAlrededor;
     public CasillaConVida(int x, int y) {
         super(x, y);

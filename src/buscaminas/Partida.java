@@ -5,66 +5,45 @@
  */
 package buscaminas;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
 
-public class Partida {
-    private boolean vidaGastada;
+public class Partida implements Serializable{
     private int numCasillasDescubiertas;
     private int puntos;
-    private boolean vidaEncontrada;
     private Resultado resultado;
     private Tablero tablero;
     private Casilla[][] casillas;
     private Nivel nivelSeleccionado;
     private int numVidasAcumuladas;
+    private Jugador jugador;
+    private ArrayList<Jugador> listaJugadores;
 
 
 
     public Partida() {
-        this.vidaGastada = false;
         this.numCasillasDescubiertas = 0;
         this.puntos = 0;
-        this.vidaEncontrada = false;
-    }
-
-    public boolean isVidaGastada() {
-        return vidaGastada;
+        this.listaJugadores= new ArrayList<>();
     }
 
     public int getNumCasillasDescubiertas() {
         return numCasillasDescubiertas;
     }
 
-    public int getPuntos() {
-        return puntos;
-    }
-
-    public boolean isVidaEncontrada() {
-        return vidaEncontrada;
-    }
-
     public Resultado getResultado() {
         return resultado;
     }
 
-    public void gastarVida() {
-        vidaGastada = true;
-    }
+    public int getPuntos() {return puntos;}
+
+    public Jugador getJugador() {return jugador;}
 
     public void incrementarCasillasDescubiertas() {
         numCasillasDescubiertas++;
-    }
-
-    public void sumarPuntos(int puntosGanados) {
-        puntos += puntosGanados;
-    }
-
-    public void encontrarVida() {
-        vidaEncontrada = true;
     }
 
     public void setResultado(Resultado resultado) {
@@ -78,6 +57,45 @@ public class Partida {
     public Tablero getTablero() { return tablero; }
 
     public Nivel getNivelSeleccionado() { return nivelSeleccionado; }
+
+    public Jugador crearJugador(Scanner scanner) {
+        System.out.print("Ingresa tu nombre de jugador: ");
+        String nombreJugador = scanner.nextLine();
+        Image fotoJugador = cargarImagen(scanner);
+        Jugador nuevoJugador = new Jugador(nombreJugador, fotoJugador);
+        // Cargar la lista actual de jugadores
+        listaJugadores = Jugador.cargarJugadores();
+        // Agregar el nuevo jugador a la lista
+        if(!listaJugadores.contains(nuevoJugador)) {
+            listaJugadores.add(nuevoJugador);
+        }
+        // Guardar la lista actualizada de jugadores
+        Jugador.guardarJugadores(listaJugadores);
+        return nuevoJugador;
+    }
+
+    public Image cargarImagen(Scanner scanner) {
+        System.out.print("¿Quieres ingresar una foto de perfil? (Si/No): ");
+        String respuesta = scanner.nextLine();
+        if (respuesta.equalsIgnoreCase("Si")) {
+            System.out.print("Ingresa la URL de tu foto de perfil: ");
+            String urlFoto = scanner.nextLine();
+            if (urlFoto == null || urlFoto.isEmpty()) {
+                System.out.println("No se ingresó una URL válida.");
+                return null;
+            }
+
+            try {
+                File archivoImagen = new File(urlFoto);
+                return ImageIO.read(archivoImagen);
+            } catch (IOException e) {
+                System.out.println("Error al leer la imagen: " + e.getMessage());
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
     
     public int calcularPuntosGanados(Nivel nivel, int numBombas) {
         int puntos = 0;
@@ -107,44 +125,31 @@ public class Partida {
         return puntos;
     }
 
-    public Jugador crearJugador(Scanner scanner) {
-        System.out.print("Ingresa tu nombre de jugador: ");
-        String nombreJugador = scanner.nextLine();
-
-        Image fotoJugador = cargarImagen(scanner);
-        return new Jugador(nombreJugador, fotoJugador);
-    }
-
-    public Image cargarImagen(Scanner scanner) {
-        System.out.print("¿Quieres ingresar una foto de perfil? (Si/No): ");
-        String respuesta = scanner.nextLine();
-
-        if (respuesta.equalsIgnoreCase("Si")) {
-            System.out.print("Ingresa la URL de tu foto de perfil: ");
-            String urlFoto = scanner.nextLine();
-
-            try {
-                File archivoImagen = new File(urlFoto);
-                return ImageIO.read(archivoImagen);
-            } catch (IOException e) {
-                System.out.println("Error al leer la imagen: " + e.getMessage());
-                return null;
+    public void mostrarPerfil(Jugador jugador){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("¿Deseas ver tu perfil? Pulsa 1 para verlo, si no pulsa cualquier otra tecla: ");
+        String respuesta = scanner.next();
+        if (respuesta.equalsIgnoreCase("1")) {
+            System.out.println("*********************");
+            System.out.println("Perfil de Jugador");
+            if(jugador.getFoto() != null){
+                System.out.println(jugador.getFoto());
             }
-        } else {
-            return null;
+            System.out.println("Nombre: " + jugador.getNombre());
+            System.out.println("Puntos Totales: " + jugador.getPuntosTotales());
+            System.out.println("Partidas Ganadas: " + jugador.getPartidasGanadas());
+            System.out.println("*********************");
         }
     }
-
 
     public void jugarPartida() {
         Scanner scanner = new Scanner(System.in);
         Partida partida;
-
+        Jugador jugador = cargarOCrearJugador(scanner);
         do {
             mostrarNivelesDisponibles();
             System.out.print("Elige un nivel (1/2/3/4): ");
             int nivelElegido = scanner.nextInt();
-
             if (!inicializarPartida(nivelElegido)) {
                 System.out.println("Nivel no válido. Por favor, elige un nivel válido.");
                 continue;
@@ -154,25 +159,20 @@ public class Partida {
 
                 while (!partida.esPartidaFinalizada() && partida.numVidasAcumuladas > 0) {
                     tablero.mostrarTablero(casillas);
-
                     // Mostrar el número de vidas solo si hay vidas disponibles
                     if (partida.numVidasAcumuladas > 0) {
                         System.out.println("Número de vidas: " + partida.numVidasAcumuladas);
                     }
-
                     System.out.print("Ingresa la fila para descubrir (1-" + tablero.getDimX() + "): ");
                     int fila = scanner.nextInt();
                     System.out.print("Ingresa la columna para descubrir (1-" + tablero.getDimY() + "): ");
                     int columna = scanner.nextInt();
-
                     if (fila >= 1 && fila <= tablero.getDimX() && columna >= 1 && columna <= tablero.getDimY()) {
                         Casilla casillaElegida = casillas[fila - 1][columna - 1];
-
                         if (!casillaElegida.isOculta()) {
                             System.out.println("¡La casilla ya ha sido descubierta!");
                         } else {
                             casillaElegida.descubrir();
-
                             // Verificar si la casilla contiene una mina
                             if (casillaElegida instanceof CasillaConMina) {
                                 // Restar una vida si hay vidas acumuladas
@@ -196,39 +196,45 @@ public class Partida {
                         System.out.println("Selección de casilla no válida. Ingresa coordenadas válidas.");
                     }
 
-                    if (partida.getNumCasillasDescubiertas() == tablero.getDimX() * tablero.getDimY() - tablero.getNumMinas()) {
+                    if (partida.getNumCasillasDescubiertas() == tablero.getDimX() * tablero.getDimY() - tablero.getNumMinas() - tablero.getNumVidas()) {
                         System.out.println("¡Has ganado! Todas las casillas seguras han sido descubiertas.");
                         partida.setResultado(Resultado.GANADA);
-
+                        jugador.setPartidasGanadas(jugador.getPartidasGanadas() + 1);
                         // Calcular puntos ganados
                         int puntosGanados = partida.calcularPuntosGanados(nivelSeleccionado, tablero.getNumMinas());
                         System.out.println("Puntos obtenidos: " + puntosGanados);
+                        jugador.setPuntosTotales(jugador.getPuntosTotales() + puntosGanados);
+                        // Guardar el jugador actualizado
+                        ArrayList<Jugador> jugadores = Jugador.cargarJugadores();
+                        jugadores.remove(jugador); // Remover jugador existente
+                        jugadores.add(jugador);
+                        Jugador.guardarJugadores(jugadores);
                         break;
                     }
                 }
-
                 if (partida.numVidasAcumuladas <= 0) {
                     partida.setResultado(Resultado.PERDIDA);
+                    System.out.println("Puntos obtenidos: 0");
                 }
-
-                System.out.println("Puntos obtenidos: 0");
-
                 // Mostrar el resultado de la partida
                 Resultado resultado = partida.getResultado();
                 System.out.println("Resultado de la partida: " + resultado);
             }
 
             // Preguntar si el jugador quiere jugar de nuevo
-            System.out.print("¿Deseas jugar de nuevo? Pulse 1 para jugar otra partida, para no jugar más pulse cualquier otra tecla: ");
+            System.out.print("¿Deseas jugar de nuevo? Pulsa 1 para jugar otra partida, para no jugar más pulsa cualquier otra tecla: ");
             String respuesta = scanner.next();
             if (!respuesta.equalsIgnoreCase("1")) {
                 break;
             }
         } while (true);
 
+        // Guardar la partida
+        partida.guardarPartida("partida_guardada.bin");
+
+        // Cerrar el Scanner
         scanner.close();
     }
-
 
 
     public void mostrarNivelesDisponibles() {
@@ -268,5 +274,41 @@ public class Partida {
         return true;
     }
 
+    public void guardarPartida(String nombreArchivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
+            oos.writeObject(this);  // Guarda la instancia actual de Partida en el archivo binario
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Partida cargarPartida(String nombreArchivo) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
+            return (Partida) ois.readObject();  // Carga la instancia de Partida desde el archivo binario
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Jugador cargarOCrearJugador(Scanner scanner) {
+        System.out.print("¿Ya tienes un jugador existente? (Si/No): ");
+        String respuesta = scanner.nextLine();
+        if (respuesta.equalsIgnoreCase("Si")) {
+            System.out.print("Ingresa el nombre del jugador existente: ");
+            String nombreJugadorExistente = scanner.nextLine();
+            Jugador jugadorExistente = new Jugador(nombreJugadorExistente, null);
+            ArrayList<Jugador> listaJugadores = Jugador.cargarJugadores();
+            if (listaJugadores.contains(jugadorExistente)) {
+                System.out.println("¡Bienvenido de nuevo, " + jugadorExistente.getNombre() + "!");
+                return jugadorExistente;
+            } else {
+                System.out.println("No se encontró el jugador existente. Creando un nuevo jugador.");
+                return crearJugador(scanner);
+            }
+        } else {
+            return crearJugador(scanner);
+        }
+    }
 }
 

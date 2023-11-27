@@ -5,7 +5,9 @@
  */
 package buscaminas;
 
-public class CasillaVacia extends Casilla {
+import java.io.Serializable;
+
+public class CasillaVacia extends Casilla implements Serializable {
     private int numMinasAlrededor;
 
     public CasillaVacia(int x, int y, int numMinasAlrededor) {

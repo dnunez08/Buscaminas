@@ -5,7 +5,9 @@
  */
 package buscaminas;
 
-public class CasillaConMina extends Casilla {
+import java.io.Serializable;
+
+public class CasillaConMina extends Casilla implements Serializable {
     public CasillaConMina(int x, int y) {
         super(x, y);
     }
