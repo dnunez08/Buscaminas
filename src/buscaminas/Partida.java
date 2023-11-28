@@ -132,10 +132,11 @@ public class Partida implements Serializable{
             if(jugador.getFoto() != null){
                 System.out.println(jugador.getFoto());
             }
-            System.out.println("Nombre: " + jugador.getNombre());
-            System.out.println("Puntos Totales: " + jugador.getPuntosTotales());
-            System.out.println("Partidas Ganadas: " + jugador.getPartidasGanadas());
-            System.out.println("*********************\n");
+            System.out.println("Nombre: " + jugador.getNombre() + "\n" +
+                    "Partidas Jugadas: " +jugador.getPartidasJugadas() + "\n" +
+                    "Puntos Totales: " + jugador.getPuntosTotales() + "\n" +
+                    "Partidas Ganadas: " + jugador.getPartidasGanadas() + "\n" +
+                    "*********************\n");
         }
     }
 
@@ -201,10 +202,9 @@ public class Partida implements Serializable{
                         int puntosGanados = partida.calcularPuntosGanados(nivelSeleccionado, tablero.getNumMinas());
                         System.out.println("Puntos obtenidos: " + puntosGanados);
                         jugador.setPuntosTotales(jugador.getPuntosTotales() + puntosGanados);
-                        System.out.println(jugador.toString());
                         // Guardar el jugador actualizado
                         listaJugadores = Jugador.cargarJugadores();
-                        listaJugadores.remove(jugador); // Remover jugador existente
+                        listaJugadores.remove(jugador); // Eliminar jugador existente
                         listaJugadores.add(jugador);
                         Jugador.guardarJugadores(listaJugadores);
                         break;
@@ -212,11 +212,21 @@ public class Partida implements Serializable{
                 }
                 if (partida.numVidasAcumuladas <= 0) {
                     partida.setResultado(Resultado.PERDIDA);
+
                     System.out.println("Puntos obtenidos: 0");
                 }
                 // Mostrar el resultado de la partida
                 Resultado resultado = partida.getResultado();
                 System.out.println("Resultado de la partida: " + resultado);
+
+                if(partida.esPartidaFinalizada()){
+                    jugador.setPartidasJugadas(jugador.getPartidasJugadas() + 1);
+                    listaJugadores = Jugador.cargarJugadores();
+                    listaJugadores.remove(jugador); // Eliminar jugador existente
+                    listaJugadores.add(jugador);
+                    Jugador.guardarJugadores(listaJugadores);
+                }
+
             }
 
             // Preguntar si el jugador quiere jugar de nuevo
@@ -233,7 +243,6 @@ public class Partida implements Serializable{
         // Cerrar el Scanner
         scanner.close();
     }
-
 
     public void mostrarNivelesDisponibles() {
         System.out.println("Niveles disponibles:\n" +

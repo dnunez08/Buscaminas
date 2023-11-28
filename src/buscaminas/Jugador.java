@@ -18,6 +18,7 @@ public class Jugador implements Serializable {
     private Image foto;
     private int puntosTotales;
     private int partidasGanadas;
+    private int partidasJugadas;
     private int vidas;
 
     public Jugador(String nombre, Image foto) {
@@ -25,6 +26,7 @@ public class Jugador implements Serializable {
         this.foto = foto;
         this.puntosTotales = 0;
         this.partidasGanadas = 0;
+        this.partidasJugadas = 0;
         this.vidas = 1;
     }
 
@@ -57,7 +59,11 @@ public class Jugador implements Serializable {
     public void setPartidasGanadas(int partidasGanadas) {
         this.partidasGanadas = partidasGanadas;
     }
-    
+
+    public int getPartidasJugadas() {return partidasJugadas;}
+
+    public void setPartidasJugadas(int partidasJugadas) {this.partidasJugadas = partidasJugadas;}
+
     public int getVidas() {
         return vidas;
     }
@@ -68,6 +74,7 @@ public class Jugador implements Serializable {
     @Override
     public String toString() {
         return "Jugador: "  + nombre  +
+                ", Partidas Jugadas: " + partidasJugadas +
                 ", Puntos Totales: " + puntosTotales +
                 ", Partidas Ganadas: " + partidasGanadas;
     }
@@ -78,23 +85,6 @@ public class Jugador implements Serializable {
         if(getClass()!=o.getClass()) return false;
         Jugador j = (Jugador) o;
         return (this.nombre.equals(j.nombre));
-    }
-
-    public void mostrarPerfil(Jugador jugador){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("¿Quieres ver tu perfil? Pulsa 1 para verlo, si no pulsa cualquier otra tecla: ");
-        String respuesta = scanner.next();
-        if (respuesta.equalsIgnoreCase("1")) {
-            System.out.println("*********************");
-            System.out.println("Perfil de Jugador");
-            if(jugador.getFoto() != null){
-                System.out.println(jugador.getFoto());
-            }
-            System.out.println("Nombre: " + jugador.getNombre());
-            System.out.println("Puntos Totales: " + jugador.getPuntosTotales());
-            System.out.println("Partidas Ganadas: " + jugador.getPartidasGanadas());
-            System.out.println("*********************");
-        }
     }
 
     public static ArrayList<Jugador> cargarJugadores() {
