@@ -19,7 +19,6 @@ public class Partida implements Serializable{
     private Casilla[][] casillas;
     private Nivel nivelSeleccionado;
     private int numVidasAcumuladas;
-    private Jugador jugador;
     private ArrayList<Jugador> listaJugadores;
 
 
@@ -39,8 +38,6 @@ public class Partida implements Serializable{
     }
 
     public int getPuntos() {return puntos;}
-
-    public Jugador getJugador() {return jugador;}
 
     public void incrementarCasillasDescubiertas() {
         numCasillasDescubiertas++;
@@ -127,25 +124,25 @@ public class Partida implements Serializable{
 
     public void mostrarPerfil(Jugador jugador){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("¿Deseas ver tu perfil? Pulsa 1 para verlo, si no pulsa cualquier otra tecla: ");
+        System.out.print("¿Deseas ver tu perfil? Pulsa 1 para verlo, si no pulsa cualquier otra tecla: \n");
         String respuesta = scanner.next();
         if (respuesta.equalsIgnoreCase("1")) {
             System.out.println("*********************");
-            System.out.println("Perfil de Jugador");
+            System.out.println("PERFIL DE JUGADOR");
             if(jugador.getFoto() != null){
                 System.out.println(jugador.getFoto());
             }
             System.out.println("Nombre: " + jugador.getNombre());
             System.out.println("Puntos Totales: " + jugador.getPuntosTotales());
             System.out.println("Partidas Ganadas: " + jugador.getPartidasGanadas());
-            System.out.println("*********************");
+            System.out.println("*********************\n");
         }
     }
 
-    public void jugarPartida() {
+    public void jugarPartida(Jugador jugador) {
         Scanner scanner = new Scanner(System.in);
         Partida partida;
-        Jugador jugador = cargarOCrearJugador(scanner);
+        mostrarPerfil(jugador);
         do {
             mostrarNivelesDisponibles();
             System.out.print("Elige un nivel (1/2/3/4): ");
@@ -204,11 +201,12 @@ public class Partida implements Serializable{
                         int puntosGanados = partida.calcularPuntosGanados(nivelSeleccionado, tablero.getNumMinas());
                         System.out.println("Puntos obtenidos: " + puntosGanados);
                         jugador.setPuntosTotales(jugador.getPuntosTotales() + puntosGanados);
+                        System.out.println(jugador.toString());
                         // Guardar el jugador actualizado
-                        ArrayList<Jugador> jugadores = Jugador.cargarJugadores();
-                        jugadores.remove(jugador); // Remover jugador existente
-                        jugadores.add(jugador);
-                        Jugador.guardarJugadores(jugadores);
+                        listaJugadores = Jugador.cargarJugadores();
+                        listaJugadores.remove(jugador); // Remover jugador existente
+                        listaJugadores.add(jugador);
+                        Jugador.guardarJugadores(listaJugadores);
                         break;
                     }
                 }
@@ -239,9 +237,9 @@ public class Partida implements Serializable{
 
     public void mostrarNivelesDisponibles() {
         System.out.println("Niveles disponibles:\n" +
-                "1. Principiante (8x8, 10 minas)\n" +
-                "2. Intermedio (16x16, 40 minas)\n" +
-                "3. Experto (16x30, 99 minas)\n" +
+                "1. Principiante (8x8, 10 minas, 3 vidas)\n" +
+                "2. Intermedio (16x16, 40 minas, 6 vidas)\n" +
+                "3. Experto (16x30, 99 minas, 10 vidas)\n" +
                 "4. Personalizado");
     }
 
@@ -297,18 +295,21 @@ public class Partida implements Serializable{
         if (respuesta.equalsIgnoreCase("Si")) {
             System.out.print("Ingresa el nombre del jugador existente: ");
             String nombreJugadorExistente = scanner.nextLine();
-            Jugador jugadorExistente = new Jugador(nombreJugadorExistente, null);
-            ArrayList<Jugador> listaJugadores = Jugador.cargarJugadores();
-            if (listaJugadores.contains(jugadorExistente)) {
-                System.out.println("¡Bienvenido de nuevo, " + jugadorExistente.getNombre() + "!");
-                return jugadorExistente;
-            } else {
-                System.out.println("No se encontró el jugador existente. Creando un nuevo jugador.");
-                return crearJugador(scanner);
+            // Cargar la lista de jugadores desde el archivo
+            listaJugadores = Jugador.cargarJugadores();
+            // Buscar el jugador existente por nombre
+            for (Jugador jugadorExistente : listaJugadores) {
+                if (jugadorExistente.getNombre().equalsIgnoreCase(nombreJugadorExistente)) {
+                    System.out.println("¡Bienvenido de nuevo, " + jugadorExistente.getNombre() + "!");
+                    return jugadorExistente;
+                }
             }
+            // Imprimir mensaje si no se encontró el jugador existente
+            System.out.println("No se encontró el jugador existente. Creando un nuevo jugador.");
+            return crearJugador(scanner);
         } else {
             return crearJugador(scanner);
         }
     }
-}
 
+}

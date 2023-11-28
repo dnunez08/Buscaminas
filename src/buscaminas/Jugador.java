@@ -82,7 +82,7 @@ public class Jugador implements Serializable {
 
     public void mostrarPerfil(Jugador jugador){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("¿Deseas jugar de nuevo? Pulsa 1 para jugar otra partida, : ");
+        System.out.print("¿Quieres ver tu perfil? Pulsa 1 para verlo, si no pulsa cualquier otra tecla: ");
         String respuesta = scanner.next();
         if (respuesta.equalsIgnoreCase("1")) {
             System.out.println("*********************");
@@ -112,9 +112,12 @@ public class Jugador implements Serializable {
     }
 
 
-    public static void guardarJugadores(ArrayList<Jugador> jugadores) {
+    public static void guardarJugadores(ArrayList<Jugador> nuevosJugadores) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("jugadores.dat"))) {
-            oos.writeObject(jugadores);
+            // Borrar el contenido existente del archivo
+            oos.reset();
+            // Escribir el nuevo ArrayList en el archivo
+            oos.writeObject(nuevosJugadores);
             System.out.println("Jugadores guardados correctamente.");
         } catch (IOException e) {
             System.out.println("Error al guardar los jugadores: " + e.getMessage());
@@ -123,4 +126,3 @@ public class Jugador implements Serializable {
 
 
 }
-

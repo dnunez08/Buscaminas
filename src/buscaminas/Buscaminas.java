@@ -14,7 +14,8 @@ public class Buscaminas {
         System.out.println("¡Bienvenido al juego de Buscaminas!");
 
         Partida partida = new Partida();
-        partida.jugarPartida();
+        Jugador jugador = partida.cargarOCrearJugador(scanner);
+        partida.jugarPartida(jugador);
 
         // Mostrar la lista actualizada de jugadores
         System.out.println("*******************************");
