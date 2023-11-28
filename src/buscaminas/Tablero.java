@@ -129,7 +129,8 @@ public class Tablero implements Serializable {
 
             for (int columna = 0; columna < casillas[fila].length; columna++) {
                 if (casillas[fila][columna].isOculta()) {
-                    //System.out.print(" [   ] ");
+                    System.out.print(" [   ] ");
+                } else {
                     if (casillas[fila][columna] instanceof CasillaConMina) {
                         System.out.print(" [ * ] "); // Mina
                     } else if (casillas[fila][columna] instanceof CasillaConVida) {
@@ -138,16 +139,6 @@ public class Tablero implements Serializable {
                     } else if (casillas[fila][columna] instanceof CasillaVacia) {
                         int minasAlrededor = ((CasillaVacia) casillas[fila][columna]).getNumMinasAlrededor();
                         System.out.printf(" [ " + minasAlrededor + " ] "); // Número de minas alrededor
-                    }
-                } else {
-                    if (casillas[fila][columna] instanceof CasillaConMina) {
-                        System.out.print(" [ ** ] "); // Mina
-                    } else if (casillas[fila][columna] instanceof CasillaConVida) {
-                        int minasAlrededor = ((CasillaConVida) casillas[fila][columna]).getNumMinasAlrededor();
-                        System.out.print(" ["+ minasAlrededor +"/V*] "); // Vida extra
-                    } else if (casillas[fila][columna] instanceof CasillaVacia) {
-                        int minasAlrededor = ((CasillaVacia) casillas[fila][columna]).getNumMinasAlrededor();
-                        System.out.printf(" [ " + minasAlrededor + " *] "); // Número de minas alrededor
                     }
                 }
             }

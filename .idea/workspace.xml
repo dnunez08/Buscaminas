@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="11 Actualizacion">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buscaminas/buscaminas/Partida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Partida.java" afterDir="false" />
-    </list>
+    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="12 Actualizacion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +172,7 @@
       <workItem from="1700165855355" duration="1313000" />
       <workItem from="1700420302647" duration="18000" />
       <workItem from="1700910387979" duration="38449000" />
-      <workItem from="1701162103114" duration="9994000" />
+      <workItem from="1701162103114" duration="10268000" />
     </task>
     <task id="LOCAL-00001" summary="1Actualizacion">
       <option name="closed" value="true" />
@@ -260,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701199877846</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="12 Actualizacion">
+      <option name="closed" value="true" />
+      <created>1701201097204</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701201097204</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +279,7 @@
     <MESSAGE value="7 Actualizacion" />
     <MESSAGE value="10 Actualizacion" />
     <MESSAGE value="11 Actualizacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="11 Actualizacion" />
+    <MESSAGE value="12 Actualizacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="12 Actualizacion" />
   </component>
 </project>
