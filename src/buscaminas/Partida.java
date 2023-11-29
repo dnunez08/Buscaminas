@@ -58,17 +58,35 @@ public class Partida implements Serializable{
     public Jugador crearJugador(Scanner scanner) {
         System.out.print("Ingresa tu nombre de jugador: ");
         String nombreJugador = scanner.nextLine();
-        Image fotoJugador = cargarImagen(scanner);
-        Jugador nuevoJugador = new Jugador(nombreJugador, fotoJugador);
         // Cargar la lista actual de jugadores
         listaJugadores = Jugador.cargarJugadores();
-        // Agregar el nuevo jugador a la lista
-        if(!listaJugadores.contains(nuevoJugador)) {
-            listaJugadores.add(nuevoJugador);
+        // Verificar si el nombre de jugador ya existe
+        if (jugadorYaExiste(nombreJugador, listaJugadores)) {
+            System.out.println("El nombre de jugador ya existe. Por favor, elige otro nombre:");
+            // Puedes darle otra oportunidad al usuario para ingresar un nombre único
+            nombreJugador = scanner.nextLine();
+            // Verificar nuevamente si el nuevo nombre también existe
+            if (jugadorYaExiste(nombreJugador, listaJugadores)) {
+                System.out.println("El nombre de jugador ya existe. No se puede crear el jugador.");
+                return null;  // Puedes devolver null o lanzar una excepción según tus necesidades
+            }
         }
+        Image fotoJugador = cargarImagen(scanner);
+        Jugador nuevoJugador = new Jugador(nombreJugador, fotoJugador);
+        // Agregar el nuevo jugador a la lista
+        listaJugadores.add(nuevoJugador);
         // Guardar la lista actualizada de jugadores
         Jugador.guardarJugadores(listaJugadores);
         return nuevoJugador;
+    }
+
+    private boolean jugadorYaExiste(String nombreJugador, ArrayList<Jugador> jugadores) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getNombre().equals(nombreJugador)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Image cargarImagen(Scanner scanner) {
@@ -293,16 +311,19 @@ public class Partida implements Serializable{
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
             return (Partida) ois.readObject();  // Carga la instancia de Partida desde el archivo binario
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-            return null;
+            // Si el archivo no existe o hay un problema al cargar la partida, crea un nuevo archivo
+            System.out.println("Error al cargar la partida. Se creará un nuevo archivo.");
+            Partida partidaNueva = new Partida();  // Asegúrate de tener un constructor sin argumentos
+            partidaNueva.guardarPartida(nombreArchivo);
+            return partidaNueva;
         }
     }
 
     public Jugador cargarOCrearJugador(Scanner scanner) {
-        System.out.print("¿Ya tienes un jugador existente? (Si/No): ");
+        System.out.print("¿Ya tienes un usuario creado? (Si/No): ");
         String respuesta = scanner.nextLine();
         if (respuesta.equalsIgnoreCase("Si")) {
-            System.out.print("Ingresa el nombre del jugador existente: ");
+            System.out.print("Ingresa tu nombre de usuario: ");
             String nombreJugadorExistente = scanner.nextLine();
             // Cargar la lista de jugadores desde el archivo
             listaJugadores = Jugador.cargarJugadores();
