@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="14 Actualizacion">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jugadores.dat" beforeDir="false" afterPath="$PROJECT_DIR$/jugadores.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partida_guardada.bin" beforeDir="false" afterPath="$PROJECT_DIR$/partida_guardada.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Buscaminas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Buscaminas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buscaminas/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscaminas/Partida.java" afterDir="false" />
-    </list>
+    <list default="true" id="32119521-5ea4-44c3-90f0-55ed44f5594e" name="Changes" comment="15 Actualizacion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +175,7 @@
       <workItem from="1701162103114" duration="10268000" />
       <workItem from="1701211121535" duration="52000" />
       <workItem from="1701252522464" duration="2240000" />
-      <workItem from="1701256596806" duration="2478000" />
+      <workItem from="1701256596806" duration="2514000" />
     </task>
     <task id="LOCAL-00001" summary="1Actualizacion">
       <option name="closed" value="true" />
@@ -287,11 +281,30 @@
       <option name="project" value="LOCAL" />
       <updated>1701256795170</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="15 Actualizacion">
+      <option name="closed" value="true" />
+      <created>1701259110869</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701259110869</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1Actualizacion" />
@@ -307,6 +320,7 @@
     <MESSAGE value="12 Actualizacion" />
     <MESSAGE value="13 Actualizacion" />
     <MESSAGE value="14 Actualizacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="14 Actualizacion" />
+    <MESSAGE value="15 Actualizacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="15 Actualizacion" />
   </component>
 </project>
